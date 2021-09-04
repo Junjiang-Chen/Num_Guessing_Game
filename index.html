@@ -1,0 +1,59 @@
+﻿<!doctype html public "-//w3c//dtd xhtml 1.1//en" "http://www.w3.org/tr/xhtml11/dtd/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="utf-8" >
+<head>
+    <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="js/knockout-3.1.0.js"></script>
+    <script type="text/javascript" src="js/game.js"></script>
+    <link href="css/style.css" rel="stylesheet" />
+    <!--
+    jQuery.js 是业内用的很广泛的Javascript基础框架，使得页面HTML元素、事件处理、CSS改变更灵活高效；
+    Knockout.js 是针对页面数据交互的MVVM Framework，简单点来说作用就是——使得业务逻辑代码与页面展示代码分割开，使得前端页面更好维护；
+		game.js 是这个游戏的功能代码
+    -->
+    <title>Random Number Guess Game</title>  
+
+</head>
+<body>
+    <p class="heading">Welcome to Random Number Guessing Game</p>
+    <div class="bodycontainer">
+    	<div>
+        	<h2><b>Level </b><select title="ChooseLevel" name="level" data-bind="options: levels,  value: selectedLevel , optionsText: 'identifier', optionsValue: 'id'"></select></h2>   
+        </div>
+        <br />
+        <p></p>
+        <h2><b>Instruction</b></h2>
+        <p>Computer generated a <span data-bind="text: digitsLimit"></span> digit random numbers. For each digit, the number is chosen between 1 - <span data-bind="text: digitsLimit"></span> (The numbers can repeat).</p>
+
+        <h2><b>Dashboard</b></h2>
+        <div class="Entrypannelinputs">
+            <div data-bind="foreach: dashboard">
+                <a class="randomNumber" data-bind="text: $data"></a>&nbsp;
+            </div>
+        </div>
+        <!--
+        ko的data-bind方法:将xxx数据绑定到这个DOM元素上,例如此处将变量dashboard数据绑定到这个位置
+        -->
+        <p class="attempts">You have <b><span data-bind="text: attempts"></span></b> attempts remaining</p>
+        <div class="entryPanel">
+            <div class="Entrypannelinputs">
+                <h2>I guess the <span data-bind="text: digitsLimit"></span> digits number above are: </h2>
+                <input data-bind='value: inputNumber, valueUpdate: "afterkeydown", hasfocus: inputFocus, event: { keypress: checkInput }' />
+                <input type="button" data-bind="click: OnEnterClick, enable: enableEnter" value="Check it!" />
+            </div>
+        </div>
+        <br />
+        <div class="resultPanel" data-bind="visible: results().length > 0">
+            <p class="result"><b>Result</b> -- sort by <a href font-size: 12px; text-decoration: none; data-bind="click: sortByCorrect">correct numbers</a> | <a href data-bind="click: sortByOrder"> asc/desc</a> order</p>
+            <div data-bind="foreach: results.slice(0)">
+                <p>
+                    <span class="Valuedata">Attempt: </span><span class="Valuedataans" data-bind="text: $data.attempt"></span>
+                    <br />
+                    <span class="Valuedata">Your Guess: </span><span class="	" data-bind="text: $data.number"></span>
+                    <br />
+                    <span class="Valuedata">Digit(s) in place  </span><span class="Valuedataans" data-bind="text: $data.resultIndex"></span> correct
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

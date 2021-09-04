@@ -1,0 +1,111 @@
+﻿body {
+    margin: 0;
+    padding: 0;
+}
+
+p.heading {
+    color: #ffffff;
+    margin: 0;
+    padding: 10px;
+    font-size: 28px;
+    margin-bottom: 10px;
+    background: rgb(5,10,15);
+    background: rgba(5,10,15,1);
+    text-align: center;
+}
+
+.randomNumber {
+    border-radius: 2px;
+    border: 1px solid #4D6B8B;
+    display: inline-block;
+    color: #ffffff;
+    font-family: arial;
+    font-size: 28px;
+    padding: 13px 17px;
+    text-decoration: none;
+    background: rgba(59,103,15,1);
+}
+
+.bodycontainer {
+    width: 95%;
+    margin: 0 auto;
+}
+
+select {
+    width: 100px;
+    border-radius: 5px;
+    border: 1px solid #4D6B8B;
+    background: #CDDFF3;
+    padding: 3px;
+}
+
+p {
+    font-size: 14px;
+    color: #094C00;
+}
+
+    p.attempts span {
+        color: #F50000;
+    }
+
+    p.attempts {
+        color: #094C00;
+    }
+
+.Entrypannelinputs {
+    width: 95%;
+    padding: 5px;
+    background: #eeeeee;
+    border: 1px solid #4D6B8B;
+}
+
+    .Entrypannelinputs input[type="text"] {
+        width: 80%;
+        border: 1px solid #357797;
+        padding: 5px;
+    }
+
+    .Entrypannelinputs input[type="button"] {
+        background: #CDDFF3;
+        font-size: 16px;
+    }
+
+h2 {
+    margin: 0;
+    padding: 0;
+    font-size: 12px;
+    font-weight: normal;
+    margin-bottom: 5px;
+    color: #094C00;
+}
+
+p span.Valuedata {
+    width: 30%;
+    float: left;
+}
+
+p span.Valuedataans {
+    font-weight: bold;
+}
+
+p.result {
+    margin: 0;
+    border-bottom: 1px solid #cccccc;
+    padding-bottom: 9px;
+}
+
+a.p.result {
+    margin: 0;
+    padding: 0;
+    font-size: 12px;
+    font-weight: normal;
+    margin-bottom: 5px;
+    color: #094C00;
+}
+
+.resultPanel{
+		width: 50%;
+    padding: 5px;
+    background: #eeeeee;
+    border: 2px solid #4D6B8B;
+}
